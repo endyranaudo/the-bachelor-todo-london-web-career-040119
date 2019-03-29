@@ -10,6 +10,7 @@ def get_first_name_of_season_winner(data, season)
   winner_first_name
 end
 
+
 def get_contestant_name(data, occupation)
   contestant_name = ""
   data.each do |season, contestants|
@@ -21,6 +22,7 @@ def get_contestant_name(data, occupation)
   end
   contestant_name
 end
+
 
 def count_contestants_by_hometown(data, hometown)
   hometown_count = 0
@@ -34,6 +36,7 @@ def count_contestants_by_hometown(data, hometown)
   hometown_count
 end
 
+
 def get_occupation(data, hometown)
   data.each do |season, contestants|
     contestants.each do |contestant, data|
@@ -44,11 +47,12 @@ def get_occupation(data, hometown)
   end
 end
 
+
 def get_average_age_for_season(data, season)
-  avarage = []
+  ages_for_season = []
   data[season].each do |contestants, data|
-    avarage << contestants["age"].to_i
+    ages_for_season << contestants["age"].to_i
   end
-  average_age = (avarage.sum.to_f/avarage.size.to_f).round
+  average_age = (ages_for_season.sum.to_f/ages_for_season.size.to_f).round
   average_age
 end
