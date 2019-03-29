@@ -48,7 +48,8 @@ def get_average_age_for_season(data, season)
   avarage = []
   data.each do |season, contestants|
     contestants.each do |contestant, data|
-      binding.pry
+      avarage << contestant["age"]
     end
   end
+  avarage
 end
