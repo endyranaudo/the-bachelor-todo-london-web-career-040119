@@ -51,5 +51,5 @@ def get_average_age_for_season(data, season)
       avarage << contestant["age"]
     end
   end
-  avarage
+  avarage.inject{ |sum, el| sum + el }.to_f / arr.size
 end
